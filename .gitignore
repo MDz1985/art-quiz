@@ -108,3 +108,4 @@ yarn.lock
 .idea
 package.json
 .DS_store
+webpack.config.js
