@@ -1,3 +1,22 @@
+/* finger-paint-regular - latin */
+@font-face {
+  font-family: 'Finger_Paint';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+  url('../assets/fonts/finger-paint-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../assets/fonts/finger-paint-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* painting-with-chocolate */
+@font-face {
+  font-family: 'Chocolate_Paint';
+  font-style: normal;
+  font-weight: normal;
+  src: local(''),
+  url('../assets/fonts/painting-with-chocolate.regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+  url('../assets/fonts/PaintingWithChocolate.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -7,11 +26,26 @@ html {
   box-sizing: inherit;
 }
 
+header{
+  position: fixed;
+  top: 2%;
+  left: 5%;
+  font-family: "Chocolate_Paint", serif;
+  font-size: 3rem;
+  color: darkred;
+  z-index: 1;
+}
+
 body{
   width: 100vw;
   height: 100vh;
+  font-family: "Finger_Paint", serif;
+  font-size: 16px;
 }
 
 main{
   height: 100%;
+  margin: 4%;
 }
+
+
