@@ -1,13 +1,169 @@
-footer{
+.close-button{
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  font-size: 2rem;
+  user-select: none;
+  color: white;
+  cursor: pointer;
+}
+
+.close-button:hover{
+  color: darkred;
+}
+.close-button:active{
+  font-size: 2.2rem;
+}
+
+.nav{
+  background-color: #5b6689f2;
   position: fixed;
-  bottom: 1%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  //display: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+  padding: 20vh 6vw;
+  color: darkred;
+}
+.navVisible{
+  display: none;
+  opacity: 0;
+}
+
+.menu{
+  display: grid;
+  grid-gap: 5vh;
+  //position: relative;
+  .menu-item{
+    position: relative;
+    width: 100%;
+    height: 25px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+//.menu-item:after{
+//  position: absolute;
+//  bottom: 0;
+//  content: "";
+//  height: 1px;
+//  width: 100%;
+//  background-color: darkred;
+//}
+.form{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 25px;
+  height: 16px;
+  background: grey;
+  border-radius: 8px;
+  overflow-x: hidden;
+}
+.labels{
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 8px;
+  border: solid grey 1px;
+  right: 9px;
+  transition: right 200ms ease-in-out;
+
+}
+
+
+.form input{
+  //transform: translateX(40px);
+  display:none;
+}
+
+.inputs:checked + .labels{
+  right: 0;
+  box-shadow: -9px 0px 0px darkred, -6px 0px darkred, -3px 0px darkred;
+  border-color: darkred;
+}
+
+
+
+
+
+//SLIDER
+
+.progress {
   display: flex;
+  //flex-basis: 100%;
+  height: 2px;
+  transition: height 0.3s;
+  background: #C4C4C4;
+  cursor: ew-resize;
+  z-index: 1;
+
+}
+.progress-slider{
+  width: 45%;
+  //min-width: 50%;
+}
+.volume-slider{
+  //min-width: 50%;
   width: 100%;
 }
-.links{
-  margin: 0 auto;
-  display: inline-flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
+/* progress in progress*/
+.progress-filled {
+  position: relative;
+  width: 50%;
+  background: #710707;
+  // flex: 0;
+  flex-basis: 50%;
+}
+.progress-filled::after{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: calc(100% - 7px);
+  top: -6px;
+  border-radius: 50px;
+  background-color: white;
+  z-index: 1;
+  user-select: none;
+}
+
+
+
+
+
+
+
+
+
+.amount-selector{
+  width: 110px;
+  display: flex;
+  justify-content: space-between;
+
+  input{
+    text-align: center;
+    background-color: transparent;
+    border: none;
+    color: darkred;
+    font-family: "Finger_Paint", serif;
+    font-size: 1rem;
+  }
+  button{
+    background-color: transparent;
+    border: none;
+    color: darkred;
+    font-family: "Finger_Paint", serif;
+    font-size: 1rem
+  }
 }

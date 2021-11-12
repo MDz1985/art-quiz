@@ -1,0 +1,38 @@
+.progress {
+  display: flex;
+  //flex-basis: 100%;
+  height: 9.43%;
+  transition: height 0.3s;
+  background: #C4C4C4;
+  cursor: ew-resize;
+  z-index: 1;
+
+}
+.progress-slider{
+  width: 45%;
+  //min-width: 50%;
+}
+.volume-slider{
+  //min-width: 50%;
+  width: 12%;
+}
+/* progress in progress*/
+.progress-filled {
+  position: relative;
+  width: 50%;
+  background: #710707;
+  // flex: 0;
+  flex-basis: 50%;
+}
+.progress-filled::after{
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: calc(100% - 7px);
+  top: -6px;
+  border-radius: 50px;
+  background-color: white;
+  z-index: 1;
+  user-select: none;
+}

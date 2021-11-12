@@ -41,11 +41,23 @@ body{
   height: 100vh;
   font-family: "Finger_Paint", serif;
   font-size: 16px;
+  padding: 6%;
 }
 
 main{
   height: 100%;
-  margin: 4%;
+  //margin: 4%;
 }
 
+h2{
+  font-size: 25px;
+  margin-bottom: 4vh;
+}
 
+button{
+  color: darkred;
+  font-family: Finger_Paint, serif;
+  font-size: 1rem;
+  //background-color: transparent;
+  //border: none;
+}
