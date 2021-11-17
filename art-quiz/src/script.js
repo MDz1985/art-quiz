@@ -33,20 +33,8 @@ closeButton.addEventListener('click', () => {
 });
 
 
-import getImgInfo from './async';
-import img from './imagesGenerator';
-// import { default } from 'webpack-dev-server/client/clients/SockJSClient';
-let rightArray;
+import getImgInfo from './imagesGenerator';
 
-getImgInfo('category','realism').then(result => {
-  img.rightArray = result.rightArray;
-  img.wrongArray = result.wrongArray;
-
-});
-// console.log(img);
-setTimeout(()=>{console.log(img.wrongArray, img.rightArray);},100);
-// console.log(getImgInfo('category','realism').promis);
-
-
-// let r = localStorage.getItem('rightArray');
-// console.log(JSON.parse(r)[0].year);
+ let i = new getImgInfo('category','realism');
+i.getImgInfo().then()
+console.log(i.randomArray);

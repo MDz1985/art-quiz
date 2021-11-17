@@ -13,6 +13,8 @@ backButton.addEventListener('click', () => {
 });
 
 
+
+
 for (let i = 0; i < 4; i++){
     gamePictures.append(imageElement(`image${i + 1}`,i+1, () => {console.log(`${j}-card`)}));
 }
