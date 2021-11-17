@@ -1,4 +1,4 @@
-import htmlFromString from "../utils/htmlFromString";
+import htmlFromString from '../utils/htmlFromString';
 import './index.scss';
 
 import footer from './index.html';

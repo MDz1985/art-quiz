@@ -1,4 +1,4 @@
-.game{
+.game-picture-screen{
   position: absolute;
   left: 0;
   top: 0;
@@ -10,8 +10,8 @@
   color: white;
   display: grid;
   justify-content: center;
-  grid-template-rows: 70vh 2rem auto 1rem;
-  transform: translateX(-100vw);
+  grid-template-rows: 50vh 2rem auto auto 4vh;
+  //transform: translateX(-100vw);
   transition: 400ms ease-in-out;
   .back-button{
     letter-spacing: -3px;
@@ -30,25 +30,42 @@
   }
   .game-pictures{
     width: 100vw;
-    //height: 100vw;
-    display: grid;
-    grid-template-columns: auto auto;
+    height: 100vw;
     max-width: 1000px;
-    //div{
-    //  background: url("../../assets/img/137.jpg");
-    //  height: 100%;
-    //  width: 100%;
-    //  background-size: cover;
-    //}
+    //display: grid;
+    //grid-template-columns: auto auto;
+    div{
+      height: 50vh;
+      width: 100%;
+      background: url("../../assets/img/137.jpg") center;
+      background-size: cover;
+    }
   }
   p {
     text-align: center;
-    align-self: center;
     padding: 1%;
+    align-self: center;
   }
+
+  .answers{
+    display: grid;
+    grid-template-columns: auto auto;
+    button{
+      user-select: none;
+    }
+    button:hover{
+      background-color: #b3d4fc;
+    }
+    button:active{
+      background-color: darkred;
+      color: white;
+    }
+  }
+
   ol{
     display: inline-flex;
     justify-content: space-around;
+    align-self: end;
   }
 }
  .timer {

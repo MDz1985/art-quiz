@@ -1,20 +1,20 @@
 import htmlFromString from '../utils/htmlFromString';
 import './index.scss';
 
-import categoriesHtml from './index.html';
-const categoriesDiv = htmlFromString(categoriesHtml);
-const categoriesCards = categoriesDiv.querySelector('.categories-cards');
+import categoriesPictureHtml from './index.html';
+const categoriesPictureDiv = htmlFromString(categoriesPictureHtml);
+const categoriesCards = categoriesPictureDiv.querySelector('.categories-picture-cards');
 
-const backButton = categoriesDiv.querySelector('.back-categories');
-const categoriesTeg = categoriesDiv.querySelector('.categories');
+const backButton = categoriesPictureDiv.querySelector('.back-categories-picture');
+const categoriesTeg = categoriesPictureDiv.querySelector('.categories');
 backButton.addEventListener('click', () => {
-  categoriesDiv.style.transform = 'translateX(-100vw)';
+  categoriesPictureDiv.style.transform = 'translateX(-100vw)';
 });
 
 import card from '../categoriesCard';
 for (let i = 0; i < 10; i++) {
   categoriesCards.append(
-    card(`card${i + 1}`, i + 1, () => {
+    card(`cardPict`, i + 1, () => {
       const gameDiv = document.querySelector('.game');
       gameDiv.style.transform = 'translateX(0)';
     })
@@ -31,4 +31,4 @@ for (let i = 0; i < 10; i++) {
 
 // }));
 
-export default categoriesDiv;
+export default categoriesPictureDiv;

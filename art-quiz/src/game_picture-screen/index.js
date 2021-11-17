@@ -1,21 +1,15 @@
 import htmlFromString from '../utils/htmlFromString';
 import './index.scss';
 
-import gameHtml from './index.html';
-import imageElement from '../game-screen-images';
-const gameDiv = htmlFromString(gameHtml);
-const gamePictures = gameDiv.querySelector('.game-pictures');
+import gamePictureHtml from './index.html';
+const gamePictureDiv = htmlFromString(gamePictureHtml);
+// const categoriesCards = categoriesDiv.querySelector('.categories-cards');
 
-const backButton = gameDiv.querySelector('.back-game');
-const categoriesTeg = gameDiv.querySelector('.categories');
-backButton.addEventListener('click', () => {
-  gameDiv.style.transform = 'translateX(-100vw)';
+const backPicture = gamePictureDiv.querySelector('.back-picture');
+// const categoriesTeg = gameDiv.querySelector('.categories');
+backPicture.addEventListener('click', () => {
+  gamePictureDiv.style.transform = 'translateX(-100vw)';
 });
-
-
-for (let i = 0; i < 4; i++){
-    gamePictures.append(imageElement(`image${i + 1}`,i+1, () => {console.log(`${j}-card`)}));
-}
 
 //
 // import card from '../categoriesCard';
@@ -34,4 +28,4 @@ for (let i = 0; i < 4; i++){
 
 // }));
 
-export default gameDiv;
+export default gamePictureDiv;
