@@ -77,14 +77,14 @@
   border-radius: 8px;
   border: solid grey 1px;
   right: 9px;
-  transition: right 200ms ease-in-out;
+  transition: 200ms ease-in-out;
 
 }
 
 
 .form input{
   //transform: translateX(40px);
-  display:none;
+  //display:none;
 }
 
 .inputs:checked + .labels{

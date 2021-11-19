@@ -7,7 +7,7 @@
             Sound
           </span>
             <form class="form">
-                <input class="inputs" id="time" type="checkbox" checked>
+                <input class="inputs sound-selector" id="time" type="checkbox" checked>
                 <label class="labels" for="time"></label>
             </form>
         </li>
@@ -21,7 +21,7 @@
             Time limit
           </span>
             <form class="form">
-                <input class="inputs" id="date" type="checkbox" checked>
+                <input class="inputs time-limit-selector" id="date" type="checkbox" checked>
                 <label class="labels" for="date"></label>
             </form>
         </li>
@@ -33,7 +33,7 @@
                 <button class="amount-button" type="button" onclick="this.nextElementSibling.stepDown()">
                     -
                 </button>
-                <input type="number" min="5" max="25" value="5" step="5" readonly class="number number-basic">
+                <input type="number" min="5" max="25" value="5" step="5" readonly class="time-limit">
                 <button class="amount-button" type="button" onclick="this.previousElementSibling.stepUp()">
                     +
                 </button>

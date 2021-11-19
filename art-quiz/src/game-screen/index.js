@@ -13,7 +13,7 @@ backButton.addEventListener('click', () => {
 });
 
 //timer
-import secondsSpan from '../switch';
+import secondsSpan from '../timer';
 gamePictures.after(secondsSpan);
 
 
@@ -21,24 +21,35 @@ gamePictures.after(secondsSpan);
 //pictures
 let pictureNumbers = [];
 import randomSort from '../randomizer';
+import playSound from '../playSound';
 
 import imgClass from '../imagesGenerator';
 let imageInfo = new imgClass('category',localStorage.getItem("current_category"));
 let currentAuthor;
 let randomArray;
+let number = 0;
+let rightAnswer;
 imageInfo.getImgInfo()
   .then(() => {
-    console.log(imageInfo.rightArray)
-
+    // console.log(imageInfo.rightArray, '444');
+    // rightAnswer = imageInfo.rightArray[0];
+    // console.log(imageInfo.rightArray, '444');
+    // console.log(rightAnswer);
     changeImagesNumbers();
-
+    let isRightSound;
     for (let i = 0; i < 4; i++) {
       gamePictures.append(imageElement(`image${i + 1}`, pictureNumbers[i], () => {
-        console.log(`${j}-card`)
+        isRightSound = pictureNumbers[i] === rightAnswer;
+        playSound(isRightSound);
       }));
     }
     imageInfo.rightArray.shift();
-    da()
+
+    //TEST !!!
+    da();
+
+
+
   }
 
 )
@@ -46,6 +57,7 @@ imageInfo.getImgInfo()
 function changeImagesNumbers() {
   pictureNumbers.length = 0;
   pictureNumbers.push(imageInfo.rightArray[0].imageNum);
+  rightAnswer = imageInfo.rightArray[0].imageNum;
   currentAuthor = imageInfo.rightArray[0]['author'];
   randomArray = imageInfo.rightArray.filter(x => x['author'] !== currentAuthor);
   randomSort(randomArray);
@@ -76,9 +88,25 @@ function changeBackground(){
 function da (){
   changeImagesNumbers();
   changeBackground();
-  setTimeout(da,10000);
+  number++;
+  questionNumbersArray[number].style.color = 'red';
+  questionNumbersArray[number-1].style.color = 'white';
+  setTimeout(da,5000);
 }
 
+
+//questionNumber
+const questionNumber = gameDiv.querySelector('.number-of-question');
+const questionNumbersArray = [];
+let question = questionNumber.firstElementChild;
+for (let i = 0; i < questionNumber.childElementCount; i++){
+  questionNumbersArray.push(question);
+  question = question.nextElementSibling;
+}
+
+
+//TEST !!!!
+questionNumbersArray[0].style.color = 'red';
 
 //
 // import card from '../categoriesCard';
