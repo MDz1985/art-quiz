@@ -12,12 +12,73 @@ backButton.addEventListener('click', () => {
   gameDiv.style.transform = 'translateX(-100vw)';
 });
 
+//timer
+import secondsSpan from '../switch';
+gamePictures.after(secondsSpan);
 
 
 
-for (let i = 0; i < 4; i++){
-    gamePictures.append(imageElement(`image${i + 1}`,i+1, () => {console.log(`${j}-card`)}));
+//pictures
+let pictureNumbers = [];
+import randomSort from '../randomizer';
+
+import imgClass from '../imagesGenerator';
+let imageInfo = new imgClass('category',localStorage.getItem("current_category"));
+let currentAuthor;
+let randomArray;
+imageInfo.getImgInfo()
+  .then(() => {
+    console.log(imageInfo.rightArray)
+
+    changeImagesNumbers();
+
+    for (let i = 0; i < 4; i++) {
+      gamePictures.append(imageElement(`image${i + 1}`, pictureNumbers[i], () => {
+        console.log(`${j}-card`)
+      }));
+    }
+    imageInfo.rightArray.shift();
+    da()
+  }
+
+)
+
+function changeImagesNumbers() {
+  pictureNumbers.length = 0;
+  pictureNumbers.push(imageInfo.rightArray[0].imageNum);
+  currentAuthor = imageInfo.rightArray[0]['author'];
+  randomArray = imageInfo.rightArray.filter(x => x['author'] !== currentAuthor);
+  randomSort(randomArray);
+
+
+  for (let i = 0; i < 3; i++) {
+    pictureNumbers.push(randomArray[i].imageNum);
+  }
+
+  randomSort(randomArray);
+  randomSort(pictureNumbers);
+  imageInfo.rightArray.shift();
 }
+
+import setBg from '../imageLoader';
+
+function changeBackground(){
+  setBg(gamePictures.firstElementChild, pictureNumbers[0]);
+  console.log(imageInfo.rightArray[0].imageNum);
+  let element = gamePictures.firstElementChild.nextElementSibling;
+  for (let i = 1; i < 4; i++) {
+    setBg(element, pictureNumbers[i]);
+    element = element.nextElementSibling;
+  }
+}
+
+//TEST !!!!!!!!
+function da (){
+  changeImagesNumbers();
+  changeBackground();
+  setTimeout(da,10000);
+}
+
 
 //
 // import card from '../categoriesCard';

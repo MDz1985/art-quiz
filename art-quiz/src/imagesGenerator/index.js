@@ -15,8 +15,8 @@ class Images{
     this.rightArray = data.filter(x => x[this.key] === this.keyValue);
     this.wrongArray = data.filter(x => x[this.key] !== this.keyValue);
 
-    for (let i = 0; i < this.wrongArray.length; i++){
-      this.randomArray.push(i);
+    for (let i = 0; i < this.rightArray.length; i++){
+      this.randomArray.push(this.rightArray[i].imageNum);
     }
     randomSort(this.randomArray)
   }

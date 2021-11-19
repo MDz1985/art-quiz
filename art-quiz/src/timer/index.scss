@@ -1,0 +1,34 @@
+.form{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 25px;
+  height: 16px;
+  background: grey;
+  border-radius: 8px;
+  overflow-x: hidden;
+}
+.labels{
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 8px;
+  border: solid grey 1px;
+  right: 9px;
+  transition: right 200ms ease-in-out;
+
+}
+
+
+.menu-item input{
+  //transform: translateX(40px);
+  display:none;
+}
+
+.inputs:checked + .labels{
+  right: 0;
+  box-shadow: -9px 0px 0px darkred, -6px 0px darkred, -3px 0px darkred;
+  border-color: darkred;
+}

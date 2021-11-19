@@ -33,8 +33,16 @@ closeButton.addEventListener('click', () => {
 });
 
 
-import getImgInfo from './imagesGenerator';
 
- let i = new getImgInfo('category','realism');
-i.getImgInfo().then()
-console.log(i.randomArray);
+//
+//
+// import getImgInfo from './imagesGenerator';
+//
+// let i = new getImgInfo('category','realism');
+// i.getImgInfo()
+//   .then(()=>console.log(i.rightArray[0].imageNum))
+
+
+
+
+

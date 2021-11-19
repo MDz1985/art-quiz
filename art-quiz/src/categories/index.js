@@ -11,10 +11,15 @@ backButton.addEventListener('click', () => {
   categoriesDiv.style.transform = 'translateX(-100vw)';
 });
 
+const categoriesArray = ['Realism', 'Impressionism', 'Expressionism', 'Renaissance', 'Avant-garde',
+  'Surrealism', 'Romanticism', 'Portrait', 'Painting', 'Landscape', 'Religion', 'Marine'];
+console.log(categoriesArray);
+
 import card from '../categoriesCard';
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 12; i++) {
   categoriesCards.append(
-    card(`card${i + 1}`, i + 1, () => {
+    card(`${i}`, categoriesArray[i], () => {
+      localStorage.setItem('current_category', categoriesArray[Number(event.target.id)].toLowerCase())
       const gameDiv = document.querySelector('.game');
       gameDiv.style.transform = 'translateX(0)';
     })
