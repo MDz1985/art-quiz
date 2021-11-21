@@ -7,14 +7,17 @@ const gameDiv = htmlFromString(gameHtml);
 const gamePictures = gameDiv.querySelector('.game-pictures');
 
 const backButton = gameDiv.querySelector('.back-game');
+const questionParagraf = gameDiv.querySelector('.question');
+
 const categoriesTeg = gameDiv.querySelector('.categories');
+
+
+import categoriesDiv from '../categories';
+
 backButton.addEventListener('click', () => {
   gameDiv.style.transform = 'translateX(-100vw)';
+  gameDiv.replaceWith(categoriesDiv);
 });
-
-//timer
-import secondsSpan from '../timer';
-gamePictures.after(secondsSpan);
 
 
 
@@ -24,6 +27,7 @@ import randomSort from '../randomizer';
 import playSound from '../playSound';
 
 import imgClass from '../imagesGenerator';
+console.log(localStorage.getItem("current_category"));
 let imageInfo = new imgClass('category',localStorage.getItem("current_category"));
 let currentAuthor;
 let randomArray;
@@ -31,10 +35,6 @@ let number = 0;
 let rightAnswer;
 imageInfo.getImgInfo()
   .then(() => {
-    // console.log(imageInfo.rightArray, '444');
-    // rightAnswer = imageInfo.rightArray[0];
-    // console.log(imageInfo.rightArray, '444');
-    // console.log(rightAnswer);
     changeImagesNumbers();
     let isRightSound;
     for (let i = 0; i < 4; i++) {
@@ -43,9 +43,13 @@ imageInfo.getImgInfo()
         playSound(isRightSound);
       }));
     }
+    questionParagraf.innerText = `What picture was written by ${imageInfo.rightArray[0].author}?`
     imageInfo.rightArray.shift();
 
+
+
     //TEST !!!
+    // localStorage.setItem('soundVolume', '1');
     da();
 
 
@@ -86,12 +90,14 @@ function changeBackground(){
 
 //TEST !!!!!!!!
 function da (){
+  questionParagraf.innerText = `What picture was written by ${imageInfo.rightArray[0].author}?`
   changeImagesNumbers();
   changeBackground();
   number++;
   questionNumbersArray[number].style.color = 'red';
   questionNumbersArray[number-1].style.color = 'white';
-  setTimeout(da,5000);
+
+  setTimeout(da,10000);
 }
 
 

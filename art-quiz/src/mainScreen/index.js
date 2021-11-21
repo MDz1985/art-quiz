@@ -6,14 +6,19 @@ const mainScreenDiv = htmlFromString(mainScreen);
 
 import menuDiv from '../menu';
 mainScreenDiv.append(menuDiv);
-// const nav = document.querySelector('.nav');
+
 
 import firstButton from '../button';
 import secondButton from '../button';
 import settingsButton from '../button';
+import gamePictureDiv from '../game_picture-screen';
+import categoriesDiv from '../categories';
 
 mainScreenDiv.append(
   firstButton('first-button', 'Художники', () => {
+    mainScreenDiv.style.transform = 'translateX(-100)';
+    mainScreenDiv.replaceWith(categoriesDiv);
+
     const categories = document.querySelector('.categories');
     categories.style.transform = 'translateX(0)';
   })
@@ -25,6 +30,8 @@ append(secondButton('second-button', 'Картины', () => {
 }));
 mainScreenDiv.append(
   settingsButton('third-button', 'Настройки', () => {
+    // mainScreenDiv.replaceWith(menuDiv);
+
     const nav = document.querySelector('.nav');
     nav.style.display = 'block';
     nav.style.opacity = '1';

@@ -11,7 +11,7 @@
   display: grid;
   justify-content: center;
   grid-template-rows: 50vh 2rem auto auto 4vh;
-  //transform: translateX(-100vw);
+  transform: translateX(-100vw);
   transition: 400ms ease-in-out;
   .back-button{
     letter-spacing: -3px;

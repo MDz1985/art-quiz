@@ -24,10 +24,3 @@ class Images{
 }
 
 export default Images
-
-
-
-
-
-
-  // export default Images

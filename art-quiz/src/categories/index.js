@@ -7,20 +7,32 @@ const categoriesCards = categoriesDiv.querySelector('.categories-cards');
 
 const backButton = categoriesDiv.querySelector('.back-categories');
 const categoriesTeg = categoriesDiv.querySelector('.categories');
+
+
+import mainScreenDiv from '../mainScreen';
+
 backButton.addEventListener('click', () => {
   categoriesDiv.style.transform = 'translateX(-100vw)';
+
+  categoriesDiv.replaceWith(mainScreenDiv);
+
 });
 
 const categoriesArray = ['Realism', 'Impressionism', 'Expressionism', 'Renaissance', 'Avant-garde',
   'Surrealism', 'Romanticism', 'Portrait', 'Painting', 'Landscape', 'Religion', 'Marine'];
-console.log(categoriesArray);
 
+
+import gameDiv from '../game-screen';
 import card from '../categoriesCard';
+import startTimer from '../timer';
+
 for (let i = 0; i < 12; i++) {
   categoriesCards.append(
     card(`${i}`, categoriesArray[i], () => {
       localStorage.setItem('current_category', categoriesArray[Number(event.target.id)].toLowerCase())
-      const gameDiv = document.querySelector('.game');
+      categoriesDiv.replaceWith(gameDiv);
+      const timer = gameDiv.querySelector('.timer');
+      startTimer(timer);
       gameDiv.style.transform = 'translateX(0)';
     })
   );
