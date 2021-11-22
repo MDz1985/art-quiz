@@ -6,6 +6,7 @@
   color: white;
   display: grid;
   grid-auto-rows: 79% 7% 7% 7%;
+  transition: 500ms ease-in-out;
   .main-image{
     background: url("../../assets/img/1.jpg") no-repeat;
     background-size: cover;

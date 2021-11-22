@@ -12,7 +12,8 @@ import mainScreenDiv from '../mainScreen';
 
 backButton.addEventListener('click', () => {
   categoriesDiv.style.transform = 'translateX(-100vw)';
-
+  // categoriesDiv.style.opacity = '0';
+  // setTimeout(() => {categoriesDiv.replaceWith(mainScreenDiv);}, 400)
   categoriesDiv.replaceWith(mainScreenDiv);
 });
 
@@ -28,7 +29,7 @@ const categoriesArray = [
   'Painting',
   'Landscape',
   'Religion',
-  'Marine',
+  'Marine'
 ];
 
 import gameDiv from '../game-screen';
@@ -59,7 +60,7 @@ import loadFirstImages from '../game-screen/loadFirstImages/loadFirstImages';
 import imageElement from '../game-screen-images';
 
 let number = 0;
-import { questionNumbersArray } from '../game-screen';
+import { questionNumbersArray, isTimerOff } from '../game-screen';
 
 let isRightSound;
 //
@@ -90,7 +91,9 @@ function eventListenerFalse() {
   // questionNumbersArray[number].style.color = 'red';
   arrayOfAnswers.push(false);
   // questionNumber.firstElementChild.style.color = 'red';
+
   clearTimeout(timeoutId);
+  isTimerOff();
   answerResult.style.transform = 'translateY(50vh)';
   playSound(false);
 }
@@ -101,6 +104,7 @@ function eventListenerTrue() {
   arrayOfAnswers.push(true);
   // questionNumber.firstElementChild.style.color = 'green';
   clearTimeout(timeoutId);
+  isTimerOff();
   answerResult.style.transform = 'translateY(50vh)';
   playSound(true);
 }
@@ -191,5 +195,7 @@ for (let i = 0; i < 12; i++) {
 //     nav.style.zIndex = '1';
 
 // }));
-export { timeoutId, eventListenerTrue, eventListenerFalse, isRightSound, number };
+export {
+  timeoutId, eventListenerTrue, eventListenerFalse, isRightSound, number
+};
 export default categoriesDiv;

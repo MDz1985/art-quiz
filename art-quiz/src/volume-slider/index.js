@@ -11,8 +11,7 @@ const slider = (className, func) => {
 };
 
 function moveVolume(e) {
-  volumeBar.style.flexBasis =
-    String(Math.floor((10000 * e.offsetX) / volume.offsetWidth) / 100) + '%';
+  volumeBar.style.flexBasis = String(Math.floor((10000 * e.offsetX) / volume.offsetWidth) / 100) + '%';
   if (Math.floor((100 * e.offsetX) / volume.offsetWidth) / 100 < 0) {
     audio.volume = 0;
   } else if (Math.floor((100 * e.offsetX) / volume.offsetWidth) / 100 > 1) {

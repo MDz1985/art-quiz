@@ -17,6 +17,7 @@ const arrayOfAnswers = [];
 import categoriesDiv, { eventListenerTrue, eventListenerFalse } from '../categories';
 import answerDiv from '../answer-result';
 import setBg from '../imageLoader';
+import resultScreenDiv from '../result-screen';
 
 // remove listeners from categories;
 function removeListeners(listener) {
@@ -35,7 +36,7 @@ backButton.addEventListener('click', () => {
   gameDiv.style.transform = 'translateX(-100vw)';
   answerResult.style.transform = 'translateY(100vh)';
   number = 0;
-  isTimerOff();
+  // isTimerOff();
   setTimeout(() => {
     gameDiv.addEventListener('click', listener);
   }, 500);
@@ -95,7 +96,7 @@ const backResult = answerDiv.querySelector('.back-result');
 console.log(answerResult, backResult);
 
 answerResult.addEventListener('click', () => {
-  console.log(arrayOfAnswers, '2344');
+  // console.log(arrayOfAnswers, '2344');
   if (arrayOfAnswers[number] === true) {
     questionNumbersArray[number].style.color = 'green';
   } else questionNumbersArray[number].style.color = 'red';
@@ -112,12 +113,19 @@ answerResult.addEventListener('click', () => {
   createAnswersArray();
   changeBackground();
   startTimer(timer);
+  if (number === 9) {
+    localStorage.setItem('answers', arrayOfAnswers.filter((element) => element === true).length);
+
+    end();
+  }
   number++;
   questionNumbersArray[number].style.color = 'blue';
   questionParagraph.innerText = `What picture was written by ${imageInfo.rightArray[0].author}?`;
+  // console.log(number)
 
   isTimerOff();
-  console.log(resultArray, 'huigoi.jpijip;');
+
+  // console.log(resultArray, 'huigoi.jpijip;');
 });
 
 // questionNumber
@@ -165,7 +173,7 @@ function createAnswersArray() {
   resultArray.push(imageInfo.rightArray[0].imageNum);
   // resultArray.push(imageInfo.randomArray[0]);
 
-  imageInfo.rightArray.shift();
+  // imageInfo.rightArray.shift();
   // imageInfo.randomArray.shift();
 }
 
@@ -264,5 +272,22 @@ function changeBackground() {
 // startTimer(timer);
 // startTimer(timer);
 
-export { arrayOfAnswers };
+// END
+function end() {
+  gameDiv.style.transform = 'translateX(-100vw)';
+  number = 0;
+  setTimeout(() => {
+    gameDiv.addEventListener('click', listener);
+  }, 500);
+  gameDiv.replaceWith(resultScreenDiv);
+
+  imageInfo = 0;
+  for (let i = 0; i < questionNumbersArray.length; i++) {
+    questionNumbersArray[i].style.color = 'white';
+  }
+
+  clearTimeout(timeManager);
+}
+
+export { arrayOfAnswers, isTimerOff };
 export default gameDiv;

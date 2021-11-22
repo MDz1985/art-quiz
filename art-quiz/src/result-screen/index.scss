@@ -1,4 +1,4 @@
-.categories{
+.result-screen{
   position: absolute;
   left: 0;
   top: 0;
@@ -8,8 +8,7 @@
   width: 100%;
   height: 100%;
   color: white;
-  transform: translateX(-100vw);
-  //opacity: 0;
+  //transform: translateX(-100vw);
   transition: 400ms ease-in-out;
   .back-button{
     letter-spacing: -3px;
@@ -26,11 +25,9 @@
   .back-button:active{
     font-size: 1.7rem;
   }
-  .categories-cards{
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 50% 50%;
-    height: 90%;
+  p{
+    padding: 40px;
   }
+
 }
 

@@ -14,22 +14,21 @@ import settingsButton from '../button';
 import categoriesDiv from '../categories';
 
 mainScreenDiv.append(
-  firstButton('first-button', 'Художники', () => {
-    mainScreenDiv.style.transform = 'translateX(-100)';
+  firstButton('first-button', 'Authors', () => {
     mainScreenDiv.replaceWith(categoriesDiv);
-
     const categories = document.querySelector('.categories');
+
     categories.style.transform = 'translateX(0)';
   })
 );
 mainScreenDiv.append(
-  secondButton('second-button', 'Картины', () => {
+  secondButton('second-button', 'Paintings', () => {
     const categories = document.querySelector('.categories-picture');
     categories.style.transform = 'translateX(0)';
   })
 );
 mainScreenDiv.append(
-  settingsButton('third-button', 'Настройки', () => {
+  settingsButton('third-button', 'Settings', () => {
     // mainScreenDiv.replaceWith(menuDiv);
 
     const nav = document.querySelector('.nav');

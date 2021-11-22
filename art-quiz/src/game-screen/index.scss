@@ -84,9 +84,22 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
+  .back-result{
+    letter-spacing: -3px;
+    position: absolute;
+    right: 7%;
+    top: 5%;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .back-result:hover{
+    color: black;
+  }
   .back-button:hover{
     color: darkred;
   }
+
+
 
   .back-button:active{
     font-size: 1.7rem;
