@@ -14,7 +14,7 @@ backButton.addEventListener('click', () => {
 import card from '../categoriesCard';
 for (let i = 0; i < 10; i++) {
   categoriesCards.append(
-    card(`cardPict`, i + 1, () => {
+    card('cardPict', i + 1, () => {
       const gameDiv = document.querySelector('.game');
       gameDiv.style.transform = 'translateX(0)';
     })

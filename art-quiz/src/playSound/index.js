@@ -1,18 +1,17 @@
 import rightSound from '../../assets/audio/right-answer.mp3';
 import wrongSound from '../../assets/audio/wrong-answer.mp3';
 
-
 export default function playSound(value) {
   const audio = new Audio();
-  if (localStorage.getItem('soundOn') === 'false'){
+  if (localStorage.getItem('soundOn') === 'false') {
     audio.volume = 0;
     // localStorage.setItem('soundVolume', '0');
-  }else {
+  } else {
     audio.volume = Number(localStorage.getItem('soundVolume'));
   }
-  if (value === true){
+  if (value === true) {
     audio.src = rightSound;
-  } else{
+  } else {
     audio.src = wrongSound;
   }
   audio.autoplay = true;

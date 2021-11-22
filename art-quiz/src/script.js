@@ -30,8 +30,8 @@ main.append(categoriesPictureDiv);
 // import gameDiv from './game-screen';
 // main.append(gameDiv);
 
-import gamePictureDiv from './game_picture-screen';
-main.append(gamePictureDiv);
+// import gamePictureDiv from './game_picture-screen';
+// main.append(gamePictureDiv);
 
 import footerDiv from './footer';
 import menuDiv from './menu';

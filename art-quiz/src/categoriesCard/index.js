@@ -12,6 +12,4 @@ const card = (elementID, innerText, func) => {
   return element;
 };
 
-
-
 export default card;
