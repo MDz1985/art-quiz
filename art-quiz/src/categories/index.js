@@ -2,6 +2,7 @@ import htmlFromString from '../utils/htmlFromString';
 import './index.scss';
 
 import categoriesHtml from './index.html';
+
 const categoriesDiv = htmlFromString(categoriesHtml);
 const categoriesCards = categoriesDiv.querySelector('.categories-cards');
 
@@ -34,8 +35,8 @@ const categoriesArray = [
 
 import gameDiv from '../game-screen';
 import card from '../categoriesCard';
-import { startTimer } from '../timer';
-import { timeoutId } from '../timer';
+import {startTimer} from '../timer';
+import {timeoutId} from '../timer';
 
 import randomSort from '../randomizer';
 import playSound from '../playSound';
@@ -60,7 +61,7 @@ import loadFirstImages from '../game-screen/loadFirstImages/loadFirstImages';
 import imageElement from '../game-screen-images';
 
 let number = 0;
-import { questionNumbersArray, isTimerOff } from '../game-screen';
+import {questionNumbersArray, isTimerOff} from '../game-screen';
 
 let isRightSound;
 //
@@ -83,7 +84,7 @@ let isRightSound;
 //   playSound(isRightSound);
 // }
 
-import { arrayOfAnswers } from '../game-screen';
+import {arrayOfAnswers} from '../game-screen';
 
 function eventListenerFalse() {
   answerResult.classList.add('wrong-result');
@@ -97,6 +98,7 @@ function eventListenerFalse() {
   answerResult.style.transform = 'translateY(50vh)';
   playSound(false);
 }
+
 function eventListenerTrue() {
   answerResult.classList.remove('wrong-result');
   answerResult.lastElementChild.innerText = 'This is right answer';
@@ -113,76 +115,77 @@ let timeoutForBackground;
 
 for (let i = 0; i < 12; i++) {
   categoriesCards.append(
-    card(`${i}`, categoriesArray[i], () => {
-      localStorage.setItem(
-        'current_category',
-        categoriesArray[Number(event.target.id)].toLowerCase()
-      );
-      categoriesDiv.replaceWith(gameDiv);
-      const img = new Images('category', localStorage.getItem('current_category'));
-
-      // TRY
-      img.getImgInfo().then(() => {
-        questionNumber.firstElementChild.style.color = '#4bd4ff';
-
-        let arrayOfImagesNumbers = loadFirstImages(
-          'category',
-          localStorage.getItem('current_category')
+      card(`${i}`, categoriesArray[i], () => {
+        localStorage.setItem(
+            'current_category',
+            categoriesArray[Number(event.target.id)].toLowerCase()
         );
-        // console.log(arrayOfImagesNumbers[0], localStorage.getItem('current_category'));
+        categoriesDiv.replaceWith(gameDiv);
+        const img = new Images('category', localStorage.getItem('current_category'));
 
-        clearTimeout(timeoutForBackground);
+        // TRY
+        img.getImgInfo().then(() => {
+          questionNumber.firstElementChild.style.color = '#4bd4ff';
 
-        timeoutForBackground = setTimeout(() => {
-          questionParagraph.innerText = `What picture was written by ${img.rightArray[0].author}`;
+          let arrayOfImagesNumbers = loadFirstImages(
+              'category',
+              localStorage.getItem('current_category')
+          );
 
-          gamePictures.innerHTML = '';
 
-          for (let i = 0; i < 4; i++) {
-            isRightSound = arrayOfImagesNumbers[i] === arrayOfImagesNumbers[4];
-            if (isRightSound === false) {
-              addListener(eventListenerFalse);
-            } else {
-              addListener(eventListenerTrue);
+          clearTimeout(timeoutForBackground);
+
+          timeoutForBackground = setTimeout(() => {
+            questionParagraph.innerText = `What picture was written by ${img.rightArray[0].author}`;
+
+            gamePictures.innerHTML = '';
+
+            for (let i = 0; i < 4; i++) {
+              isRightSound = arrayOfImagesNumbers[i] === arrayOfImagesNumbers[4];
+              if (isRightSound === false) {
+                addListener(eventListenerFalse);
+              } else {
+                addListener(eventListenerTrue);
+              }
+
+              function addListener(listener) {
+                gamePictures.append(
+                    imageElement(
+                        `image${i + 1}`,
+                        arrayOfImagesNumbers[i],
+                        listener
+                        // () => {
+                        // isRightSound = arrayOfImagesNumbers[i] === arrayOfImagesNumbers[4];
+                        // if (isRightSound === false){
+                        //   answerResult.classList.add('wrong-result');
+                        //   answerResult.lastElementChild.innerText = 'This is wrong answer';
+                        //   questionNumbersArray[number].style.color = 'red';
+                        //   // questionNumber.firstElementChild.style.color = 'red';
+                        //   clearTimeout(timeoutId);
+                        // }else {
+                        //   answerResult.classList.remove('wrong-result');
+                        //   answerResult.lastElementChild.innerText = 'This is right answer';
+                        //   questionNumbersArray[number].style.color = 'green';
+                        //   // questionNumber.firstElementChild.style.color = 'green';
+                        //   clearTimeout(timeoutId);
+                        // }
+                        // answerResult.style.transform = 'translateY(50vh)';
+                        // playSound(isRightSound);
+                        // }
+                    )
+                );
+              }
             }
-            function addListener(listener) {
-              gamePictures.append(
-                imageElement(
-                  `image${i + 1}`,
-                  arrayOfImagesNumbers[i],
-                  listener
-                  // () => {
-                  // isRightSound = arrayOfImagesNumbers[i] === arrayOfImagesNumbers[4];
-                  // if (isRightSound === false){
-                  //   answerResult.classList.add('wrong-result');
-                  //   answerResult.lastElementChild.innerText = 'This is wrong answer';
-                  //   questionNumbersArray[number].style.color = 'red';
-                  //   // questionNumber.firstElementChild.style.color = 'red';
-                  //   clearTimeout(timeoutId);
-                  // }else {
-                  //   answerResult.classList.remove('wrong-result');
-                  //   answerResult.lastElementChild.innerText = 'This is right answer';
-                  //   questionNumbersArray[number].style.color = 'green';
-                  //   // questionNumber.firstElementChild.style.color = 'green';
-                  //   clearTimeout(timeoutId);
-                  // }
-                  // answerResult.style.transform = 'translateY(50vh)';
-                  // playSound(isRightSound);
-                  // }
-                )
-              );
-            }
-          }
-        }, 100);
-      });
+          }, 100);
+        });
 
-      const timer = gameDiv.querySelector('.timer');
-      clearTimeout(timeoutId);
-      startTimer(timer, timeoutId);
+        const timer = gameDiv.querySelector('.timer');
+        clearTimeout(timeoutId);
+        startTimer(timer, timeoutId);
 
-      localStorage.setItem('isTimer', 'true');
-      gameDiv.style.transform = 'translateX(0)';
-    })
+        localStorage.setItem('isTimer', 'true');
+        gameDiv.style.transform = 'translateX(0)';
+      })
   );
 }
 

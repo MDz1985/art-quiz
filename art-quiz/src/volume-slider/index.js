@@ -31,7 +31,7 @@ volume.addEventListener('mousedown', function (e) {
   this.addEventListener('mousemove', moveVolume);
 });
 
-volume.addEventListener('mouseup', function (e) {
+volume.addEventListener('mouseup', function () {
   this.removeEventListener('mousemove', moveVolume);
 });
 

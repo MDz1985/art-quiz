@@ -7,6 +7,7 @@
   url('../assets/fonts/finger-paint-v10-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
   url('../assets/fonts/finger-paint-v10-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
 /* painting-with-chocolate */
 @font-face {
   font-family: 'Chocolate_Paint';
@@ -22,11 +23,11 @@ html {
   box-sizing: border-box;
 }
 
-*, *::after, *::before{
+*, *::after, *::before {
   box-sizing: inherit;
 }
 
-header{
+header {
   position: fixed;
   top: 2%;
   left: 5%;
@@ -36,7 +37,7 @@ header{
   z-index: 1;
 }
 
-body{
+body {
   width: 100vw;
   height: 100vh;
   font-family: "Finger_Paint", serif;
@@ -45,17 +46,17 @@ body{
   overflow: hidden;
 }
 
-main{
+main {
   height: 100%;
   //margin: 4%;
 }
 
-h2{
+h2 {
   font-size: 25px;
   margin-bottom: 4vh;
 }
 
-button{
+button {
   color: darkred;
   font-family: Finger_Paint, serif;
   font-size: 1rem;

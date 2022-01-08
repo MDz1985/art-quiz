@@ -2,40 +2,41 @@ import htmlFromString from '../utils/htmlFromString';
 import './index.scss';
 
 import mainScreen from './index.html';
+
 const mainScreenDiv = htmlFromString(mainScreen);
 
 import menuDiv from '../menu';
+
 mainScreenDiv.append(menuDiv);
 
 import firstButton from '../button';
 import secondButton from '../button';
 import settingsButton from '../button';
-// import gamePictureDiv from '../game_picture-screen';
 import categoriesDiv from '../categories';
 
 mainScreenDiv.append(
-  firstButton('first-button', 'Authors', () => {
-    mainScreenDiv.replaceWith(categoriesDiv);
-    const categories = document.querySelector('.categories');
+    firstButton('first-button', 'Authors', () => {
+      mainScreenDiv.replaceWith(categoriesDiv);
+      const categories = document.querySelector('.categories');
 
-    categories.style.transform = 'translateX(0)';
-  })
+      categories.style.transform = 'translateX(0)';
+    })
 );
 mainScreenDiv.append(
-  secondButton('second-button', 'Paintings', () => {
-    const categories = document.querySelector('.categories-picture');
-    categories.style.transform = 'translateX(0)';
-  })
+    secondButton('second-button', 'Paintings', () => {
+      const categories = document.querySelector('.categories-picture');
+      categories.style.transform = 'translateX(0)';
+    })
 );
 mainScreenDiv.append(
-  settingsButton('third-button', 'Settings', () => {
-    // mainScreenDiv.replaceWith(menuDiv);
+    settingsButton('third-button', 'Settings', () => {
+      // mainScreenDiv.replaceWith(menuDiv);
 
-    const nav = document.querySelector('.nav');
-    nav.style.display = 'block';
-    nav.style.opacity = '1';
-    nav.style.zIndex = '1';
-  })
+      const nav = document.querySelector('.nav');
+      nav.style.display = 'block';
+      nav.style.opacity = '1';
+      nav.style.zIndex = '1';
+    })
 );
 
 export default mainScreenDiv;

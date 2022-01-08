@@ -1,4 +1,4 @@
-.categories{
+.categories {
   position: absolute;
   left: 0;
   top: 0;
@@ -11,7 +11,8 @@
   transform: translateX(-100vw);
   //opacity: 0;
   transition: 400ms ease-in-out;
-  .back-button{
+
+  .back-button {
     letter-spacing: -3px;
     position: absolute;
     right: 7%;
@@ -19,14 +20,16 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .back-button:hover{
+
+  .back-button:hover {
     color: darkred;
   }
 
-  .back-button:active{
+  .back-button:active {
     font-size: 1.7rem;
   }
-  .categories-cards{
+
+  .categories-cards {
     display: grid;
     justify-content: center;
     grid-template-columns: 50% 50%;

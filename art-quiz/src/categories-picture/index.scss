@@ -1,4 +1,4 @@
-.categories-picture{
+.categories-picture {
   position: absolute;
   left: 0;
   top: 0;
@@ -10,7 +10,8 @@
   color: darkred;
   transform: translateX(-100vw);
   transition: 400ms ease-in-out;
-  .back-button{
+
+  .back-button {
     letter-spacing: -3px;
     position: absolute;
     right: 7%;
@@ -18,19 +19,22 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .back-button:hover{
+
+  .back-button:hover {
     color: darkred;
   }
 
-  .back-button:active{
+  .back-button:active {
     font-size: 1.7rem;
   }
-  .categories-picture-cards{
+
+  .categories-picture-cards {
     display: grid;
     grid-template-columns: auto auto;
     height: 90%;
   }
-  .cardPict{
+
+  .cardPict {
     background-color: white;
     color: darkred;
   }

@@ -5,7 +5,6 @@ export default function playSound(value) {
   const audio = new Audio();
   if (localStorage.getItem('soundOn') === 'false') {
     audio.volume = 0;
-    // localStorage.setItem('soundVolume', '0');
   } else {
     audio.volume = Number(localStorage.getItem('soundVolume'));
   }

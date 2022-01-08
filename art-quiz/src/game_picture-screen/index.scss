@@ -1,4 +1,4 @@
-.game-picture-screen{
+.game-picture-screen {
   position: absolute;
   left: 0;
   top: 0;
@@ -13,7 +13,8 @@
   grid-template-rows: 50vh 2rem auto auto 4vh;
   transform: translateX(-100vw);
   transition: 400ms ease-in-out;
-  .back-button{
+
+  .back-button {
     letter-spacing: -3px;
     position: absolute;
     right: 7%;
@@ -21,55 +22,62 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .back-button:hover{
+
+  .back-button:hover {
     color: darkred;
   }
 
-  .back-button:active{
+  .back-button:active {
     font-size: 1.7rem;
   }
-  .game-pictures{
+
+  .game-pictures {
     width: 100vw;
     height: 100vw;
     max-width: 1000px;
     //display: grid;
     //grid-template-columns: auto auto;
-    div{
+    div {
       height: 50vh;
       width: 100%;
       background: url("../../assets/img/137.jpg") center;
       background-size: cover;
     }
   }
+
   p {
     text-align: center;
     padding: 1%;
     align-self: center;
   }
 
-  .answers{
+  .answers {
     display: grid;
     grid-template-columns: auto auto;
-    button{
+
+    button {
       user-select: none;
     }
-    button:hover{
+
+    button:hover {
       background-color: #b3d4fc;
     }
-    button:active{
+
+    button:active {
       background-color: darkred;
       color: white;
     }
   }
 
-  ol{
+  ol {
     display: inline-flex;
     justify-content: space-around;
     align-self: end;
   }
 }
- .timer {
-   text-align: right;
-   padding-right: 5%;
-   font-size: 2rem;
- }
+
+.timer {
+  text-align: right;
+  padding-right: 5%;
+  font-size: 2rem;
+}

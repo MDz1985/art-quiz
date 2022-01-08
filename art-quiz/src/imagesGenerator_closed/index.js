@@ -1,5 +1,6 @@
 class Images {
-  constructor(key, value) {}
+  constructor(key, value) {
+  }
 }
 
 let img = new Images();

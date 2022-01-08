@@ -1,4 +1,4 @@
-.result{
+.result {
   position: absolute;
   left: 0;
   top: 0;
@@ -10,7 +10,8 @@
   color: white;
   transform: translateY(100vh);
   transition: transform 400ms ease-in-out;
-  .back-button{
+
+  .back-button {
     letter-spacing: -3px;
     position: absolute;
     right: 7%;
@@ -18,21 +19,22 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .back-button:hover{
+
+  .back-button:hover {
     color: darkred;
   }
 
-  .back-button:active{
+  .back-button:active {
     font-size: 1.7rem;
   }
 
 }
 
-.result-text{
+.result-text {
   color: black;
   font-size: 2rem;
 }
 
-.wrong-result{
+.wrong-result {
   background-color: #8c2518e8;
 }

@@ -13,12 +13,10 @@ class Images {
     const res = await fetch(this.images);
     const data = await res.json();
     this.rightArray = data.filter((x) => x[this.key] === this.keyValue);
-    // this.wrongArray = data.filter(x => x[this.key] !== this.keyValue);
 
     for (let i = 0; i < this.rightArray.length; i++) {
       this.randomArray.push(this.rightArray[i].imageNum);
     }
-    // randomSort(this.randomArray)
   }
 
   wrongArray() {

@@ -1,4 +1,4 @@
-.game{
+.game {
   position: absolute;
   left: 0;
   top: 0;
@@ -13,7 +13,8 @@
   grid-template-rows: 70vh 2rem auto 1rem;
   transform: translateX(-100vw);
   transition: 400ms ease-in-out;
-  .back-button{
+
+  .back-button {
     letter-spacing: -3px;
     position: absolute;
     right: 7%;
@@ -21,14 +22,16 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .back-button:hover{
+
+  .back-button:hover {
     color: darkred;
   }
 
-  .back-button:active{
+  .back-button:active {
     font-size: 1.7rem;
   }
-  .game-pictures{
+
+  .game-pictures {
     width: 100vw;
     //height: 100vw;
     display: grid;
@@ -47,24 +50,27 @@
     //  background-size: cover;
     //}
   }
+
   p {
     text-align: center;
     align-self: center;
     padding: 1%;
   }
-  ol{
+
+  ol {
     display: inline-flex;
     justify-content: space-around;
   }
 }
- .timer {
-   text-align: right;
-   padding-right: 5%;
-   font-size: 2rem;
- }
+
+.timer {
+  text-align: right;
+  padding-right: 5%;
+  font-size: 2rem;
+}
 
 
-.result{
+.result {
   position: absolute;
   left: 0;
   top: 0;
@@ -76,7 +82,8 @@
   color: white;
   transform: translateY(50vh);
   transition: 400ms ease-in-out;
-  .back-button{
+
+  .back-button {
     letter-spacing: -3px;
     position: absolute;
     right: 7%;
@@ -84,7 +91,8 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .back-result{
+
+  .back-result {
     letter-spacing: -3px;
     position: absolute;
     right: 7%;
@@ -92,26 +100,27 @@
     font-size: 1.5rem;
     cursor: pointer;
   }
-  .back-result:hover{
+
+  .back-result:hover {
     color: black;
   }
-  .back-button:hover{
+
+  .back-button:hover {
     color: darkred;
   }
 
 
-
-  .back-button:active{
+  .back-button:active {
     font-size: 1.7rem;
   }
 
 }
 
-.result-text{
+.result-text {
   color: black;
   font-size: 2rem;
 }
 
-.wrong-result{
+.wrong-result {
   background-color: #8c2518e8;
 }

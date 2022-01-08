@@ -3,7 +3,7 @@ import './index.scss';
 
 import buttonHtml from './index.html';
 
-const button = (className, innerText, func) => {
+const createButton = (className, innerText, func) => {
   const element = htmlFromString(buttonHtml);
   element.innerText = innerText;
   element.classList.add(className);
@@ -11,4 +11,4 @@ const button = (className, innerText, func) => {
   return element;
 };
 
-export default button;
+export default createButton;

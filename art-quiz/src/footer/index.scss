@@ -1,15 +1,17 @@
-footer{
+footer {
   position: fixed;
   bottom: 0.5%;
   display: flex;
   width: 100%;
 }
-.links{
+
+.links {
   display: inline-flex;
   justify-content: space-around;
   align-items: center;
   width: 88%;
-  a{
+
+  a {
     text-decoration: none;
   }
 }
