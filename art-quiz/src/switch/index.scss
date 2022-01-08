@@ -1,4 +1,4 @@
-.form{
+.form {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -8,7 +8,8 @@
   border-radius: 8px;
   overflow-x: hidden;
 }
-.labels{
+
+.labels {
   display: block;
   position: absolute;
   width: 16px;
@@ -22,12 +23,12 @@
 }
 
 
-.menu-item input{
+.menu-item input {
   //transform: translateX(40px);
   //display: block;
 }
 
-.inputs:checked + .labels{
+.inputs:checked + .labels {
   right: 0;
   box-shadow: -9px 0px 0px darkred, -6px 0px darkred, -3px 0px darkred;
   border-color: darkred;

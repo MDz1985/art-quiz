@@ -1,43 +1,43 @@
 <nav class="nav">
-    <span class="close-button">x</span>
-    <h2>Settings</h2>
-    <ul class="menu">
-        <li class="menu-item">
+  <span class="close-button">x</span>
+  <h2>Settings</h2>
+  <ul class="menu">
+    <li class="menu-item">
           <span>
             Sound
           </span>
-            <form class="form">
-                <input class="inputs sound-selector" id="time" type="checkbox" checked>
-                <label class="labels" for="time"></label>
-            </form>
-        </li>
-        <li>
-            <div class="progress volume-slider">
-                <div class="progress-filled volume-slider-filled"></div>
-            </div>
-        </li>
-        <li class="menu-item">
+      <form class="form">
+        <input class="inputs sound-selector" id="time" type="checkbox" checked>
+        <label class="labels" for="time"></label>
+      </form>
+    </li>
+    <li>
+      <div class="progress volume-slider">
+        <div class="progress-filled volume-slider-filled"></div>
+      </div>
+    </li>
+    <li class="menu-item">
             <span>
             Time limit
           </span>
-            <form class="form">
-                <input class="inputs time-limit-selector" id="date" type="checkbox" checked>
-                <label class="labels" for="date"></label>
-            </form>
-        </li>
-        <li class="menu-item">
+      <form class="form">
+        <input class="inputs time-limit-selector" id="date" type="checkbox" checked>
+        <label class="labels" for="date"></label>
+      </form>
+    </li>
+    <li class="menu-item">
             <span>
                 time
             </span>
-            <div class="amount-selector">
-                <button class="amount-button" type="button" onclick="this.nextElementSibling.stepDown()">
-                    -
-                </button>
-                <input type="number" min="5" max="25" step="5" readonly class="time-limit">
-                <button class="amount-button" type="button" onclick="this.previousElementSibling.stepUp()">
-                    +
-                </button>
-            </div>
-        </li>
-    </ul>
+      <div class="amount-selector">
+        <button class="amount-button" type="button" onclick="this.nextElementSibling.stepDown()">
+          -
+        </button>
+        <input type="number" min="5" max="25" step="5" readonly class="time-limit">
+        <button class="amount-button" type="button" onclick="this.previousElementSibling.stepUp()">
+          +
+        </button>
+      </div>
+    </li>
+  </ul>
 </nav>

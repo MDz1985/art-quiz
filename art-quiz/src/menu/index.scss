@@ -1,4 +1,4 @@
-.close-button{
+.close-button {
   background-color: transparent;
   border: none;
   position: absolute;
@@ -8,16 +8,17 @@
   user-select: none;
   color: white;
   cursor: pointer;
+
+  &:hover {
+    color: darkred;
+  }
+
+  &:active {
+    font-size: 2.2rem;
+  }
 }
 
-.close-button:hover{
-  color: darkred;
-}
-.close-button:active{
-  font-size: 2.2rem;
-}
-
-.nav{
+.nav {
   background-color: #859dc4f2;
   position: fixed;
   left: 0;
@@ -32,16 +33,17 @@
   padding: 20vh 6vw;
   color: darkred;
 }
-.navVisible{
+
+.navVisible {
   display: none;
   opacity: 0;
 }
 
-.menu{
+.menu {
   display: grid;
   grid-gap: 5vh;
   //position: relative;
-  .menu-item{
+  .menu-item {
     position: relative;
     width: 100%;
     height: 25px;
@@ -50,6 +52,7 @@
     align-items: center;
   }
 }
+
 //.menu-item:after{
 //  position: absolute;
 //  bottom: 0;
@@ -58,7 +61,7 @@
 //  width: 100%;
 //  background-color: darkred;
 //}
-.form{
+.form {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -68,7 +71,8 @@
   border-radius: 8px;
   overflow-x: hidden;
 }
-.labels{
+
+.labels {
   display: block;
   position: absolute;
   width: 16px;
@@ -82,19 +86,16 @@
 }
 
 
-.form input{
+.form input {
   //transform: translateX(40px);
   //display:none;
 }
 
-.inputs:checked + .labels{
+.inputs:checked + .labels {
   right: 0;
   box-shadow: -9px 0px 0px darkred, -6px 0px darkred, -3px 0px darkred;
   border-color: darkred;
 }
-
-
-
 
 
 //SLIDER
@@ -109,14 +110,17 @@
   z-index: 1;
 
 }
-.progress-slider{
+
+.progress-slider {
   width: 45%;
   //min-width: 50%;
 }
-.volume-slider{
+
+.volume-slider {
   //min-width: 50%;
   width: 100%;
 }
+
 /* progress in progress*/
 .progress-filled {
   position: relative;
@@ -125,7 +129,8 @@
   // flex: 0;
   flex-basis: 50%;
 }
-.progress-filled::after{
+
+.progress-filled::after {
   position: absolute;
   content: "";
   height: 15px;
@@ -139,19 +144,12 @@
 }
 
 
-
-
-
-
-
-
-
-.amount-selector{
+.amount-selector {
   width: 110px;
   display: flex;
   justify-content: space-between;
 
-  input{
+  input {
     text-align: center;
     background-color: transparent;
     border: none;
@@ -159,7 +157,8 @@
     font-family: "Finger_Paint", serif;
     font-size: 1rem;
   }
-  button{
+
+  button {
     background-color: transparent;
     border: none;
     color: darkred;

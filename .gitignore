@@ -104,8 +104,6 @@ dist
 .tern-port
 
 #webpack
-yarn.lock
 .idea
-package.json
 .DS_store
-webpack.config.js
+node_modules

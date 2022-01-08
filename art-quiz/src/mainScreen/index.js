@@ -30,8 +30,6 @@ mainScreenDiv.append(
 );
 mainScreenDiv.append(
     settingsButton('third-button', 'Settings', () => {
-      // mainScreenDiv.replaceWith(menuDiv);
-
       const nav = document.querySelector('.nav');
       nav.style.display = 'block';
       nav.style.opacity = '1';

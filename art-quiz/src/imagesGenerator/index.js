@@ -19,7 +19,7 @@ class Images {
     }
   }
 
-  wrongArray() {
+  getArrayOfWrongAnswers() {
     let array = this.randomArray.filter((element) => element !== this.rightArray[0].imageNum);
     randomSort(array);
     return array;

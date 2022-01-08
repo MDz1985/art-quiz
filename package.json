@@ -1,0 +1,38 @@
+{
+  "dependencies": {
+    "css-loader": "^6.5.1",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "sass": "^1.43.4",
+    "sass-loader": "^12.3.0",
+    "sass-resources-loader": "^2.2.4",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.63.0",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.4.0"
+  },
+  "name": "mdz1985-JSFE2021Q3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/rolling-scopes-school/mdz1985-JSFE2021Q3.git",
+  "author": "MDz1985 <m_d@tut.by>",
+  "license": "MIT",
+  "scripts": {
+    "build": "node_modules/.bin/webpack --progress",
+    "start": "node_modules/.bin/webpack-dev-server --stats-error-details"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "eslint": "^8.2.0",
+    "eslint-config-airbnb": "19.0.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.27.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.4.1",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  }
+}

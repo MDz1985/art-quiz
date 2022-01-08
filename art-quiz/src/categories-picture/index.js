@@ -8,7 +8,7 @@ const categoriesPictureDiv = htmlFromString(categoriesPictureHtml);
 const categoriesCards = categoriesPictureDiv.querySelector('.categories-picture-cards');
 
 const backButton = categoriesPictureDiv.querySelector('.back-categories-picture');
-const categoriesTeg = categoriesPictureDiv.querySelector('.categories');
+
 backButton.addEventListener('click', () => {
   categoriesPictureDiv.style.transform = 'translateX(-100vw)';
 });
